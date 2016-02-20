@@ -1,0 +1,27 @@
+<head>
+  <title>kung-fu-quoting</title>
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <div id="main">
+    {{> inputAutocomplete settings=settings id="legend" class="form-control" name="legend" placeholder="Quote Fragment" }}
+    <div id="spin">
+      <div>
+        <p>Padding Before</p>
+        {{> numberSpinner min=0 max=10 value=0 id="before"}}
+      </div>
+      <div>
+        <p>Padding After</p>
+        {{> numberSpinner min=0 max=10 value=0 id="after"}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="kung">
+	{{name}}
+</template>

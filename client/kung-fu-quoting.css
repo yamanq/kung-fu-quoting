@@ -1,0 +1,16 @@
+#main {
+	margin: auto;
+	width: 66%;
+	background-color: red;
+	padding: 2%;
+	margin-top: 2%;
+	border-radius: 15px;
+}
+
+#spin {
+	margin-left: 10%;
+}
+
+#legend {
+	font-size: 190%;
+}

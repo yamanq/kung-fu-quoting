@@ -1,0 +1,1 @@
+subtitles.permit(['insert', 'update', 'remove']).never().apply();
