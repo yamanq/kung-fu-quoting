@@ -1,10 +1,45 @@
-test = "";
+function playQuote () {
+  search = document.getElementById('legend').value;
+  before = document.getElementById('beforespin').value;
+  after = document.getElementById('afterspin').value;
+
+  document.getElementById('legend').value = "";
+  document.getElementById('beforespin').value = "0";
+  document.getElementById('afterspin').value = "0";
+
+
+  if (before === "" || before === NaN) {
+    before = 0;
+  } else {
+    before = parseInt(before) * 1000;
+  }
+
+  if (after === "" || after === NaN) {
+    after = 0;
+  } else {
+    after = parseInt(after) * 1000;
+  }
+
+  search = subtitles.find({"subtitle": search}).fetch()[0];
+
+  start = search['start'];
+  start = start.split(":");
+  start = 1000 * ((60 * 60 * parseInt(start[0])) + (60 * parseInt(start[1])) + parseInt(start[2]));
+
+
+  end = search.end;
+  end = end.split(":")
+  end = 1000 * ((60 * 60 * parseInt(end[0])) + (60 * parseInt(end[1])) + parseInt(end[2])) + 500;
+
+  mySound = new Audio("http://68.56.19.11:5000/getquote?start=" + (start - before) + "&end=" + (end + after) );
+  mySound.play();
+}
 
 Template.hello.helpers({
   settings: function() {
     return {
       position: "bottom",
-      limit: 10,
+      limit: 6,
       rules: [
         {
           token: '',
@@ -15,39 +50,19 @@ Template.hello.helpers({
         }
       ]
     };
-  },
-  sounurl: function() {
   }
 });
 
 Template.hello.events({
-  'click button': function() {
-    console.log("clicked");
-    
+  'click .options': function() {
+    playQuote();
   },
   'keyup #legend': function(event) {
-    search = document.getElementById('legend').value;
-    before = document.getElementById('before').value
-    if (before === "" || before === NaN) {
-      before = 0;
-    } else {
-      before = parseInt(before);
-    }
-    // search = "I figured it out. Skadoosh."
-    search = subtitles.find({"subtitle": search}).fetch()[0];
+    if (event.which === 13) {
+      playQuote();
+    };
+  },
 
-    start = search.start;
-    start = start.split(":")
-    start = 1000 * ((60 * 60 * parseInt(start[0])) + (60 * parseInt(start[1])) + parseInt(start[2]));
-
-    end = search.end;
-    end = end.split(":")
-    end = 1000 * ((60 * 60 * parseInt(end[0])) + (60 * parseInt(end[1])) + parseInt(end[2])) + 500;
-
-    mySound = new Audio("http://127.0.0.1:5000/getquote?start=" + start + "&end=" + (end + (1000*before)));
-    mySound.play();
-
-  }
 });
 
 Template.kung.helpers({

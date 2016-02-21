@@ -8,20 +8,23 @@
 
 <template name="hello">
   <div id="main">
-    {{> inputAutocomplete settings=settings id="legend" class="form-control" name="legend" placeholder="Quote Fragment" }}
+    <h1> Kung Fu Quoting </h1>
+    {{> inputAutocomplete settings=settings id="legend" class="form-control" name="legend" placeholder="Quote" }}
     <div id="spin">
-      <div>
+      <div id='before'>
         <p>Padding Before</p>
-        {{> numberSpinner min=0 max=10 value=0 id="before"}}
+        {{> numberSpinner min=0 max=10 value=0 id="beforespin"}}
       </div>
-      <div>
+      <div id='after'>
         <p>Padding After</p>
-        {{> numberSpinner min=0 max=10 value=0 id="after"}}
+        {{> numberSpinner min=0 max=10 value=0 id="afterspin"}}
       </div>
     </div>
   </div>
 </template>
 
 <template name="kung">
-	{{name}}
+  <div class="options">
+	 {{name}} 
+  </div>
 </template>

@@ -1,16 +1,109 @@
+@font-face {
+    font-family: 'seven';
+    src: url('./font.ttf');
+}
+
+body {
+	font-family: "seven";
+	background-image: url('./bg.png');
+}
+
+p {
+	margin-bottom: 0%;
+}
+
+h1 {
+	display: inline;
+}
+
 #main {
 	margin: auto;
 	width: 66%;
-	background-color: red;
+	background-color: #CFAB5D;
 	padding: 2%;
+	padding-bottom: 3.5%;
 	margin-top: 2%;
 	border-radius: 15px;
+	height: 135px;
+
+	-webkit-box-shadow: 5px 5px 6px 2px #01030F;
+	box-shadow: 5px 5px 6px 2px #01030F;
+}
+
+.-autocomplete-container {
+    top: 35% !important;
+    background-color: #FCEDD1 !important;
+	width: 66% !important;
+    border-radius: 15px !important;
+}
+
+.options {
+	padding-top: 5%;
+}
+
+.-autocomplete-item.selected {
+	background-color: #85351C !important;
+    border-radius : 15px !important;
 }
 
 #spin {
-	margin-left: 10%;
+	float: right;
+	margin-top: -1.5%;
+    margin-right: 1;
+    text-align: center;
 }
 
 #legend {
 	font-size: 190%;
+	font-family: "seven";
+	width: 75%;
+	margin-top: 4.5%;
+	margin-left: 3%;
+    background-color: #FCEDD1;
+    padding-left: 1%;
+
+}
+
+#spin > div {
+    padding-bottom: 25%;
+}
+
+#beforespin {
+	background-color: #79B766;
+	border-color: #01030F;
+}
+
+#afterspin {
+	background-color: #79B766;
+	border-color: #01030F;
+}
+
+.sub {
+	background-color: #79B766;
+
+	-webkit-transition: background-color 0.5s ease !important;
+	-moz-transition: background-color 0.5s ease !important;
+	-ms-transition: background-color 0.5s ease !important;
+	-o-transition: background-color 0.5s ease !important;
+	transition: background-color 0.5s ease !important;
+	border-color: #01030F !important;	
+}
+
+.add {
+	background-color: #79B766;
+
+	-webkit-transition: background-color 0.5s ease !important;
+	-moz-transition: background-color 0.5s ease !important;
+	-ms-transition: background-color 0.5s ease !important;
+	-o-transition: background-color 0.5s ease !important;
+	transition: background-color 0.5s ease !important;	
+	border-color: #01030F !important;
+}
+
+.sub:hover {
+	background-color: #537F47 !important;
+}
+
+.add:hover {
+	background-color: #537F47 !important;
 }
