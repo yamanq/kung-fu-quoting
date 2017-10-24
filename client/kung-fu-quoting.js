@@ -1,4 +1,4 @@
-function playQuote () {
+function playQuote() {
   search = document.getElementById('legend').value;
   before = document.getElementById('beforespin').value;
   after = document.getElementById('afterspin').value;
@@ -7,18 +7,9 @@ function playQuote () {
   document.getElementById('beforespin').value = "0";
   document.getElementById('afterspin').value = "0";
 
+  before = (before === "" || before === NaN) ? 0 : parseInt(before) * 1000;
 
-  if (before === "" || before === NaN) {
-    before = 0;
-  } else {
-    before = parseInt(before) * 1000;
-  }
-
-  if (after === "" || after === NaN) {
-    after = 0;
-  } else {
-    after = parseInt(after) * 1000;
-  }
+  after = (after === "" || after === NaN) ? 0 : parseInt(after) * 1000;
 
   search = subtitles.find({"subtitle": search}).fetch()[0];
 
